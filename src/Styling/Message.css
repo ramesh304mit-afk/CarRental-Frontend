@@ -237,7 +237,7 @@
       left: 0 !important;
       width: 100% !important;
       max-width: none !important;
-      height: calc(100vh - 60px) !important; /* Full height minus bottom nav */
+      height: calc(100vh - 75px) !important; /* Full height minus bottom nav clearance */
       border-radius: 0 !important;
       transform: none !important;
       margin: 0 !important;
@@ -268,22 +268,32 @@
     .message-box {
       position: relative;
       width: 100%;
-      height: 100%;
+      height: 100% !important;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
     
     .userchat-info {
       border-radius: 0 !important;
       padding: 15px 10px !important;
+      flex-shrink: 0;
     }
     
     .message-content {
       width: 100%;
-      flex: 1 !important;
-      height: auto !important;
+      flex: 1 1 auto !important;
+      height: 0 !important; /* Forces flexbox to calculate height properly based on flex-grow */
       overflow-y: auto;
-      margin-bottom: 5px;
+      margin-bottom: 0px;
+    }
+
+    .chat-container {
+      padding: 10px !important;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      flex-shrink: 0;
+      margin-bottom: 10px; /* Leave space above the bottom navigation bar */
     }
   }
 
