@@ -15,7 +15,7 @@ function App() {
     <div className="background-video-container">
       
       <video autoPlay muted loop className="background-video">
-        <source src="/Videos/BackgroundVideo.mp4" type="video/mp4" />
+        <source src="https://docs.google.com/uc?export=download&confirm=no_antivirus&id=1VrWIKYUW9tpjAQIoB9fmD2FvxzFtx2PE" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
