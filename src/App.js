@@ -9,6 +9,7 @@ import SignupPage from "./Components/SignupPage";
 import LoginPage from "./Components/LoginPage";
 import Messages from "./Components/Messages";
 import { ChatProvider } from "./Components/ChatContext";
+import { CarProvider } from "./Components/StateManagement";
 
 function App() {
   return ( 
@@ -20,8 +21,9 @@ function App() {
       </video>
 
       <BrowserRouter>
-        <ChatProvider>
-          <Header />
+        <CarProvider>
+          <ChatProvider>
+            <Header />
 
           <Routes>
             <Route path="/" element={<Homepage />}>
@@ -43,7 +45,8 @@ function App() {
               Messages
             </Route>
           </Routes>
-        </ChatProvider>
+          </ChatProvider>
+        </CarProvider>
       </BrowserRouter>
     </div>
   );

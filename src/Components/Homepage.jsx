@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../Styling/HomePage.css";
 import Box from "@mui/material/Box";
 import Chip from "@mui/material/Chip";
 import Slider from "@mui/material/Slider";
 import RentalCarCards from "./RentalCarCards";
-import { CarProvider } from "./StateManagement";
+import { CarContext } from "./StateManagement";
 import CarDetailPopup from "./CarDetailPopup";
 
 function valuetext(value) {
@@ -12,18 +12,16 @@ function valuetext(value) {
 }
 
 export default function Homepage() {
-  const [filters, setFilters] = useState({
-    carType: [],
-    transmission: [],
-    fuelType: [],
-    seats: [],
-    modelYear: null,
-    priceRange: [500, 7500],
-  });
+  const {
+    filters,
+    setFilters,
+    cardetails,
+    setCardetails,
+    isModelYearActive,
+    setIsModelYearActive
+  } = useContext(CarContext);
 
-  const [cardetails, setCardetails] = useState([]);
   const [error, setError] = useState("");
-  const [isModelYearActive, setIsModelYearActive] = useState(false);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   useEffect(() => {
@@ -129,9 +127,8 @@ export default function Homepage() {
     setFilters((prevFilters) => ({ ...prevFilters, priceRange: newValue }));
   };
   return (
-    <CarProvider>
-      <div>
-        <div className="homepagebackground"></div>
+    <div>
+      <div className="homepagebackground"></div>
         <div className="homepagebody">
           {mobileFiltersOpen && (
             <div className="mobile-filter-overlay" onClick={closeMobileFilters}></div>
@@ -470,6 +467,5 @@ export default function Homepage() {
         </div>
         <CarDetailPopup />
       </div>
-    </CarProvider>
   );
 }
