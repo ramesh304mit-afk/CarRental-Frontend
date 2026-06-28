@@ -1,0 +1,374 @@
+  .message-container {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 815px;
+    background-color: black;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 3; /* Ensure popup is above background */
+  }
+  
+  .message-box {
+    position: absolute;
+    width: 450px;
+    height: 815px;
+    /* z-index: 1; */
+  }
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .userchat-info, .message-content, .chat-container {
+    position: relative;
+    z-index: 2;
+  }
+  .message-content {
+    width: 450px;
+    height: 680px; 
+    flex: 1;
+    overflow-y: auto; 
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .message-content::-webkit-scrollbar {
+    display: none;
+  }
+  .message-bubble {
+    max-width: 70%;
+    padding: 10px;
+    margin: 5px 3px;
+    border-radius: 10px;
+    display: flex;
+    word-wrap: break-word;
+  }
+
+  .message-time {
+    font-size: 0.75rem;
+    color: #a0a0a0;
+    height: 25px;
+    display: flex;
+    align-content: end;
+    align-items: end;
+    margin-left: 10px;
+  }
+  
+  /* Sent messages (right side) */
+  .message-bubble.sent {
+    align-self: flex-end;
+    background-color: #dcf8c6; /* WhatsApp-like green */
+    color: #000;
+    text-align: left;
+    margin-left: auto;
+  }
+  
+  /* Received messages (left side) */
+  .message-bubble.received {
+    align-self: flex-start;
+    background-color: #fff; /* White background */
+    color: #000;
+    text-align: left;
+    margin-right: auto;
+    border: 1px solid #ececec;
+  }
+  .userchat-info {
+    display: flex;
+    align-items: center;
+    background-color: #075e54; /* WhatsApp header background color */
+    padding: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .userchat-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .user-name {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .chat-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  .whatsapp-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .send-button {
+    background-color: #ecad00;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .send-button:hover {
+    background-color: #d19900;
+  }
+  
+  .send-button:active {
+    background-color: #b48400;
+  }
+  
+  /* .chat-container:focus-within .whatsapp-input {
+    border-color: #34b7f1;
+    box-shadow: 0 1px 2px rgba(52, 183, 241, 0.5);
+  } */
+
+  .active-users {
+    padding: 0px;
+    background-color: #232323;
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .active-user {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-bottom: #fff 1px solid;
+  }
+
+  .active-user:hover {
+    background-color: #4d4d4d;
+  }
+  
+  .selected-recipient {
+    background-color: #4d4d4d; /* WhatsApp green */
+  }
+
+  .user-avatar-container {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    overflow: hidden;
+    border-radius: 100%;
+  }
+
+  /* .user-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  } */
+
+  .user-info {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+  
+  .user-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .user-last-message {
+    font-size: 12px;
+    color: #fff;
+  }
+
+  .time-status-container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+
+  .notification-indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    color: #000;
+    background-color: #ffbb00;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    z-index: 10;
+  }
+
+  .mobile-back-btn {
+    display: none;
+  }
+
+  @media (max-width: 991px) {
+    .message-container {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      max-width: none !important;
+      height: calc(100vh - 60px) !important; /* Full height minus bottom nav */
+      border-radius: 0 !important;
+      transform: none !important;
+      margin: 0 !important;
+      z-index: 999 !important;
+      background-color: black;
+    }
+    
+    .mobile-hide {
+      display: none !important;
+    }
+    
+    .mobile-back-btn {
+      display: inline-block;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 24px;
+      margin-right: 15px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    
+    .active-users {
+      height: 100%;
+      border-radius: 0 !important;
+    }
+    
+    .message-box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .userchat-info {
+      border-radius: 0 !important;
+      padding: 15px 10px !important;
+    }
+    
+    .message-content {
+      width: 100%;
+      flex: 1 !important;
+      height: auto !important;
+      overflow-y: auto;
+      margin-bottom: 5px;
+    }
+  }
+
+/* Shared Car Cards in Chat */
+.car-card-bubble {
+  padding: 0 !important;
+  overflow: hidden;
+  border-radius: 12px !important;
+  background-color: #1e1e1e !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  max-width: 280px !important;
+  flex-direction: column !important;
+  display: flex !important;
+  flex-shrink: 0 !important;
+}
+
+.chat-car-card {
+  width: 250px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  color: white;
+  border: none;
+  flex-shrink: 0 !important;
+}
+
+.chat-car-card-image-container {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+
+.chat-car-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.chat-car-card-price-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: #ffbb00;
+  color: black;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.chat-car-card-details {
+  padding: 10px 12px;
+}
+
+.chat-car-card-title {
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffbb00;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chat-car-card-specs {
+  font-size: 11px;
+  color: #b0b0b0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spec-divider {
+  color: #555;
+}
+
+.car-card-time {
+  align-self: flex-end;
+  color: #777 !important;
+  font-size: 10px !important;
+  margin: 4px 10px 6px 0 !important;
+  height: auto !important;
+  display: block !important;
+}

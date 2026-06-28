@@ -1,0 +1,359 @@
+.cardetailpopupbackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 2;
+}
+
+.cardetailpopup-container {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 815px;
+  background-color: black;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 3; /* Ensure popup is above background */
+}
+
+.close-mark {
+  position: absolute;
+  top: 5px; /* Adjust as necessary */
+  right: 10px; /* Adjust as necessary */
+  background: none;
+  border: none;
+  font-size: 20px; /* Adjust size as necessary */
+  color: white;
+  cursor: pointer;
+  z-index: 3;
+  width: fit-content;
+}
+
+.message-box {
+  position: absolute;
+  width: 450px;
+  height: 815px;
+  z-index: 1;
+}
+
+.message-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.user-info, .userchat-info, .message-content, .chat-container {
+  position: relative;
+  z-index: 2;
+}
+.message-content {
+  width: 450px;
+  height: 680px; 
+  flex: 1;
+  overflow-y: auto; 
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* border: 2px solid black; */
+}
+
+.message-content::-webkit-scrollbar {
+  display: none;
+}
+.message-bubble {
+  max-width: 80%;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #34b7f1;
+  color: white;
+  align-self: flex-end;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  background-color: #075e54; /* WhatsApp header background color */
+  padding: 10px;
+  border-top-right-radius: 10px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.user-name {
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+}
+
+.your-car-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.chat-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.whatsapp-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.send-button {
+  background-color: #34b7f1;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.send-button:hover {
+  background-color: #1c9ed9;
+}
+
+.send-button:active {
+  background-color: #0a85bf;
+}
+
+.chat-container:focus-within .whatsapp-input {
+  border-color: #34b7f1;
+  box-shadow: 0 1px 2px rgba(52, 183, 241, 0.5);
+}
+
+.mobile-carousel-tabs {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .cardetailpopup-container {
+    width: 95%;
+    max-width: 480px;
+    height: 640px; /* Fixed height for popup on mobile */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden; /* Hide outer scroll to allow tab panes to scroll independently */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cardetailpopup-container > .row {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .mobile-carousel-tabs {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #111;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    padding-right: 45px; /* Make space for close mark */
+    flex-shrink: 0;
+  }
+
+  .mobile-tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    transition: color 0.2s, border-bottom-color 0.2s;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-tab-btn.active {
+    color: #ffbb00;
+    border-bottom-color: #ffbb00;
+  }
+
+  .mobile-tab-pane {
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 15px !important;
+  }
+
+  .mobile-tab-pane.chat-pane {
+    padding: 0 !important;
+  }
+
+  .mobile-tab-pane.inactive {
+    display: none !important;
+  }
+
+  .mobile-tab-pane.active {
+    display: flex !important;
+    flex-direction: column;
+    flex: 1;
+    height: calc(100% - 50px) !important;
+    overflow-y: auto;
+  }
+
+  .mobile-tab-pane.active.chat-pane {
+    overflow: hidden !important;
+  }
+
+  .carousel-item {
+    height: 200px !important;
+    width: 100% !important;
+  }
+  
+  .carousel-item img {
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  .message-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .message-content {
+    width: 100%;
+    flex: 1 !important; /* Fill available height dynamically */
+    height: auto !important;
+    overflow-y: auto;
+    margin-bottom: 5px;
+  }
+
+
+
+  .close-mark {
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    z-index: 1050;
+  }
+}
+
+/* Shared Car Cards in Chat */
+.car-card-bubble {
+  padding: 0 !important;
+  overflow: hidden;
+  border-radius: 12px !important;
+  background-color: #1e1e1e !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  max-width: 280px !important;
+  flex-direction: column !important;
+  display: flex !important;
+  flex-shrink: 0 !important;
+}
+
+.chat-car-card {
+  width: 250px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  color: white;
+  border: none;
+  flex-shrink: 0 !important;
+}
+
+.chat-car-card-image-container {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+
+.chat-car-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.chat-car-card-price-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: #ffbb00;
+  color: black;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.chat-car-card-details {
+  padding: 10px 12px;
+}
+
+.chat-car-card-title {
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffbb00;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chat-car-card-specs {
+  font-size: 11px;
+  color: #b0b0b0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spec-divider {
+  color: #555;
+}
+
+.car-card-time {
+  align-self: flex-end;
+  color: #777 !important;
+  font-size: 10px !important;
+  margin: 4px 10px 6px 0 !important;
+  height: auto !important;
+  display: block !important;
+}

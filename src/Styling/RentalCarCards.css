@@ -1,0 +1,7 @@
+.car-cards {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.678);
+  color: white;
+}

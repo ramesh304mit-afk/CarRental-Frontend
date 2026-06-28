@@ -1,0 +1,175 @@
+.homepagebackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  filter: blur(100vh);
+  z-index: -2;
+}
+
+.homepagebody {
+  position: absolute;
+  top: 100px;
+  left: 30px;
+  display: flex;
+  overflow: hidden;
+  padding: 0%;
+}
+
+.greenbg {
+  background-color: white;
+}
+
+.filter-background {
+  background-color: rgb(0, 0, 0);
+}
+
+.filter-side {
+  width: 420px;
+  max-height: 863px;
+  overflow: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.carcardsside {
+  margin-left: 35px;
+  width: 1420px;
+  max-height: 863px;
+  overflow: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.carcardsside::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.accordion-item {
+  background-color: rgba(0, 0, 0, 0.678);
+  color: white;
+}
+
+.form-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, green 50%, gray 50%);
+}
+
+.form-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid green;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid green;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.form-range::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid green;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* styles.css */
+.accordion-button::after {
+  color: yellow !important;  /* Change the arrow color to yellow */
+}
+
+.mobile-filter-header {
+  display: none !important;
+}
+
+.mobile-filter-overlay {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .homepagebody {
+    top: 90px;
+    left: 2.5%;
+    width: 95%;
+    flex-direction: column;
+    margin-bottom: 80px; /* Space for the bottom navigation bar */
+  }
+  
+  .filter-side {
+    position: fixed;
+    top: 0;
+    left: -320px; /* Hidden offscreen to the left */
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1040;
+    transition: left 0.3s ease-in-out;
+    margin-bottom: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    max-height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .filter-side::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .filter-side.mobile-open {
+    left: 0; /* Slide into view */
+  }
+  
+  .mobile-filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mobile-filter-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 1030;
+  }
+  
+  .carcardsside {
+    width: 100%;
+    margin-left: 0;
+    max-height: calc(100vh - 170px);
+    overflow-y: auto;
+  }
+  
+  .carcardsside > div {
+    justify-content: center !important;
+  }
+}

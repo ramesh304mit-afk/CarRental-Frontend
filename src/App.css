@@ -1,0 +1,34 @@
+.background-video-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE/Edge */
+}
+
+.background-video-container::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, Opera */
+}
+
+.background-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+}
+
+  @media (max-width: 991px) {
+    .background-video-container {
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+    .background-video {
+      position: fixed;
+    }
+  }

@@ -1,0 +1,92 @@
+.car-cards {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.678);
+  color: white;
+}
+
+.user-dashboard {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  padding-bottom: 60px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.car-delete-button {
+  background-color: #ffbb00;
+  border-radius: 10px;
+  margin: 2px;
+  font-weight: 500;
+}
+
+.mycars-title {
+  border: none;
+  background-color: whitesmoke;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 100px;
+  margin: 25px 2px 30px 2px;
+  flex: 1;
+  text-align: center;
+}
+
+.usercarcardsside {
+  overflow: visible;
+  padding-bottom: 40px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.usercarcardsside::-webkit-scrollbar {
+  display: none;
+}
+
+.car-pic {
+  width: 300px;
+  height: 169px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.car-image-edit-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.car-pic:hover .car-image-edit-icon {
+  visibility: visible;
+}
+
+@media (max-width: 991px) {
+  .user-dashboard {
+    width: 95%;
+    left: 2.5%;
+    top: 90px;
+  }
+  .mycars-title {
+    padding: 10px 20px;
+    width: 90%;
+    max-width: 300px;
+    margin: 25px auto 30px auto;
+  }
+  .usercarcardsside {
+    width: 100%;
+    max-height: none;
+  }
+}

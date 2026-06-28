@@ -1,0 +1,274 @@
+  .cus-cars{
+    background-color: rgba(0, 0, 0, 0.678);
+    width: 420px;
+    height: 560px;
+    margin: 0%;
+    padding: 0;
+    position: absolute;
+    left: 30px;
+    top: 100px;
+  }
+  
+  .car-spec {
+    background-color: transparent;
+    margin: 0;
+    color: #fff;
+  }
+  
+  .car-spec:hover{ 
+    cursor: pointer;
+    background-color: #a8a8a8dc;
+    color: rgb(0, 0, 0);
+  }
+  
+  .car-spec.active{
+    background-color: #ffffff;
+    color: black;
+    outline: none;
+  }
+  
+  .car-spec-options{
+    background-color: transparent;
+    margin: 0;
+    color: #fff;
+  }
+  
+  .car-spec-options:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: black;
+  }
+  
+  .input-active {
+    padding: 0%;
+    color: black;
+    border: 2px solid black;
+    border-radius: 7px;
+    width: 150px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .input-inactive {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  
+  
+  .brand-options-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 440px;
+    top: 100px;
+    width: 300px;
+    height: auto;
+    max-height: 600px;
+    overflow-y: auto;
+  
+    /* Hide scrollbar for webkit browsers (Chrome, Safari) */
+    -webkit-scrollbar {
+      display: none;
+    }
+  
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+  }
+  
+  .year-options-box {
+    background-color: rgba(0, 0, 0, 0.329);
+    position: absolute;
+    left: 440px;
+    top: 100px; /* Adjusted top position for better alignment */
+    width: 300px;
+    height: auto;
+    max-height: 600px;
+    overflow-y: auto; /* Allows scrolling if there are many years */
+  
+    /* Hide scrollbar for webkit browsers (Chrome, Safari) */
+    -webkit-scrollbar {
+      display: none;
+    }
+  
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+  }
+  
+  .transmission-options-box{
+    background-color: rgba(0, 0, 0, 0.329);
+    position: absolute;
+    left: 440px;
+    top: 100px;
+    width: 300px;
+    height: 150px;
+  }
+  
+  .seats-options-box{
+    background-color: rgba(0, 0, 0, 0.329);
+    position: absolute;
+    left: 440px;
+    top: 100px;
+    width: 300px;
+    height: 190px;
+  }
+  
+  .fuel-options-box{
+    background-color: rgba(0, 0, 0, 0.329);
+    position: absolute;
+    left: 440px;
+    top: 100px;
+    width: 300px;
+    height: 200px;
+  }
+  
+  .car-type-options-box{
+    background-color: rgba(0, 0, 0, 0.329);
+    position: absolute;
+    left: 440px;
+    top: 100px;
+    width: 300px;
+    height: 240px;
+  }
+  
+  .price-slider-box{
+    background-color: rgba(0, 0, 0, 0.329);
+    position: absolute;
+    left: 440px;
+    top: 100px;
+    width: 300px;
+    height: 200px;
+  }
+  
+  .file-input:valid{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  .car-submit{
+    background-color: #ffbb00;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 3px 10px;
+    transition: transform 0.1s ease;
+  }
+  
+  
+  
+  .car-submit.clicked {
+    transform: scale(0.97);
+    background-color: #f0cf75; /* Optional: Change color on click */
+  }
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: default;
+  }
+  
+  .popup {
+    background: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+  }
+  
+  .popup button {
+    margin-top: 10px;
+    background-color: #ffbb00;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  .slider-range {
+    appearance: none;
+    width: 85%;
+    height: 30px;
+    outline: none;
+    transition: 0.3s ease;
+    background-color: transparent;
+  }
+  
+  .slider-range::-webkit-slider-runnable-track {
+    background: rgb(0, 0, 0);
+    height: 7px;
+  }
+  
+  .slider-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px; /* Match thumb's height for symmetry */
+    height: 30px;
+    background: #ffbb00;
+    border-radius: 0%; /* Square shape */
+    cursor: pointer;
+    margin-top: -12px; /* Centers the thumb vertically on the track */
+  }
+  
+  .slider-range::-moz-range-thumb {
+    width: 10px;
+    height: 30px;
+    background: #ffbb00;
+    border-radius: 0%;
+    cursor: pointer;
+    margin-top: -12px; /* For Firefox, aligns thumb */
+  }
+  
+  .slider-range::-ms-thumb {
+    width: 10px;
+    height: 30px;
+    background: #ffbb00;
+    border-radius: 0%;
+    cursor: pointer;
+  }
+
+  @media (max-width: 991px) {
+    .cus-cars {
+      width: 92%;
+      max-width: 420px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 90px;
+      height: auto;
+      padding-bottom: 20px;
+    }
+    
+    .brand-options-box,
+    .year-options-box,
+    .transmission-options-box,
+    .seats-options-box,
+    .fuel-options-box,
+    .car-type-options-box,
+    .price-slider-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 320px;
+      height: auto !important;
+      max-height: 70vh;
+      z-index: 105;
+      background-color: rgba(0, 0, 0, 0.95);
+      border: 1px solid #444;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+  }

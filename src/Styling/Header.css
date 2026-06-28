@@ -1,0 +1,352 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  width: 95%;
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  z-index: 4;
+  /* background-color: white; */
+}
+
+.app-logo {
+  background-color: rgba(0, 0, 0, 0.678);
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 60px;
+  margin: 0px 2px;
+  flex: 1;
+  text-align: center;
+}
+
+.app-logo:hover {
+  color: white;
+  text-decoration: none;
+  cursor: default;
+}
+
+.app-header-option {
+  background-color: rgba(0, 0, 0, 0.678);
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 60px;
+  margin: 0px 2px;
+  flex: 1;
+  text-align: center;
+}
+
+.app-header-option:hover {
+  background-color: #a8a8a8af;
+  text-decoration: none;
+  color: black;
+}
+
+.app-header-option:focus,
+.app-header-option:active {
+  background-color: whitesmoke;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.app-header-option.active {
+  background-color: white;
+  color: black;
+}
+
+.profile {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.678);
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 60px;
+  margin: 0px 2px;
+  flex: 1;
+  text-align: center;
+}
+
+.profile:hover {
+  background-color: #ffffff;
+  text-decoration: none;
+  color: black;
+  border: none;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.profile-pic-container {
+  position: relative;
+  display: inline-block;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.profile-pic:hover .edit-icon {
+  visibility: visible;
+}
+
+.save-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+.logout-button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.678);
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 60px;
+  margin: 0px 2px;
+  flex: 1;
+  text-align: center;
+}
+.logout-button:hover {
+  background-color: #ffffff;
+  text-decoration: none;
+  color: black;
+  border: none;
+}
+
+
+.profile-popup {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  width: 400px;
+  height: 300px;
+  background-color: rgb(0, 0, 0);
+  margin: 0%;
+}
+
+.profile-closemark:hover {
+  cursor: pointer;
+}
+
+.settings-btn {
+  padding: 3px;
+  margin: 0px 5px 15px 5px;
+  font-size: 14px;
+  color: black;
+  background-color: #ffbb00; /* Red color for Delete options */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: end;
+}
+
+.settings-btn:hover {
+  background-color: #b48400; /* Darker red on hover */
+}
+
+.extended-settings {
+  background-color: black;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.extended-settings button {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #d9534f; /* Red color for Delete options */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.extended-settings button:hover {
+  background-color: #c9302c; /* Darker red on hover */
+}
+
+/* Desktop styles for new elements to ensure PC UI is unchanged */
+.hamburger-menu {
+  display: none;
+}
+.mobile-header-actions {
+  display: none;
+}
+.mobile-bottom-nav {
+  display: none;
+}
+
+/* Mobile responsive menu */
+@media (max-width: 991px) {
+  .app-header {
+    width: 92%;
+    left: 4%;
+    top: 20px;
+    align-items: center;
+  }
+  
+  .desktop-only-hamburger {
+    display: none !important;
+  }
+  
+  .desktop-header-links {
+    display: none !important;
+  }
+  
+  /* Mobile Top Bar Actions */
+  .mobile-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 100;
+  }
+  
+
+  .mobile-filter-toggle-btn {
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid #444;
+    color: white;
+    font-size: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  .mobile-filter-toggle-btn:hover,
+  .mobile-filter-toggle-btn:active {
+    background: #ffbb00;
+    color: black;
+    border-color: #ffbb00;
+  }
+  
+  /* Mobile Bottom Navigation Bar */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  .mobile-nav-item {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 24px;
+    background: none;
+    border: none;
+    padding: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease-in-out, transform 0.1s ease;
+  }
+  
+  .mobile-nav-item:active {
+    transform: scale(0.9);
+  }
+  
+  .mobile-nav-item.active {
+    color: #ffbb00;
+  }
+  
+  .mobile-nav-profile-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
+  }
+  
+  .active .mobile-nav-profile-img {
+    border: 2px solid #ffbb00;
+  }
+  
+  .app-logo {
+    padding: 10px 30px;
+    font-size: 18px;
+  }
+  
+  /* Centered Profile Popup Modal on Mobile */
+  .profile-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    z-index: 1100;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
+
+/* Header & Bottom Nav Notification Dots */
+.header-notification-dot {
+  position: absolute;
+  top: -2px;
+  right: -8px;
+  width: 6px;
+  height: 6px;
+  background-color: #ff3b30; /* Bright red dot */
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 59, 48, 0.8);
+}
+
+.mobile-nav-notification-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: #ff3b30; /* Bright red dot */
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 59, 48, 0.8);
+}
