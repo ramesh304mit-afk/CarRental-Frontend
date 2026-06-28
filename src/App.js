@@ -15,7 +15,7 @@ function App() {
   return ( 
     <div className="background-video-container">
       
-      <video autoPlay muted loop className="background-video">
+      <video autoPlay muted loop playsInline webkit-playsinline="true" preload="auto" className="background-video">
         <source src="https://www.dropbox.com/scl/fi/c8a1guzdk6mw9ez42uuok/BackgroundVideo.mp4?rlkey=hptj6alrbw1366456p01w49ik&st=0cmoli1s&raw=1" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
