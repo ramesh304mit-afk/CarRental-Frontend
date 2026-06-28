@@ -158,15 +158,17 @@
 
 @media (max-width: 991px) {
   .cardetailpopup-container {
-    width: 95%;
-    max-width: 480px;
-    height: 640px; /* Fixed height for popup on mobile */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow: hidden; /* Hide outer scroll to allow tab panes to scroll independently */
+    width: 100% !important;
+    max-width: none !important;
+    height: calc(100% - 60px) !important; /* Full height minus exactly the bottom navigation bar */
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    border-radius: 0 !important;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    z-index: 1005 !important;
   }
   
   .cardetailpopup-container > .row {
@@ -252,17 +254,24 @@
     display: flex;
     flex-direction: column;
     z-index: 1;
+    overflow: hidden;
   }
 
   .message-content {
     width: 100%;
-    flex: 1 !important; /* Fill available height dynamically */
-    height: auto !important;
+    flex: 1 1 auto !important; /* Fill available height dynamically */
+    height: 0 !important;
     overflow-y: auto;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
   }
 
-
+  .chat-container {
+    padding: 10px !important;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    flex-shrink: 0;
+    margin-bottom: 0px; /* Aligns flatly at the bottom edge above navigation bar */
+  }
 
   .close-mark {
     top: 10px;
