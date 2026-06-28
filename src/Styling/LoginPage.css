@@ -72,3 +72,16 @@
   transform: scale(0.97);
   background-color: #f0cf75;
 }
+
+/* Mobile Devices */
+@media (max-width: 767px) {
+  .loginform-container {
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 380px;
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
+
