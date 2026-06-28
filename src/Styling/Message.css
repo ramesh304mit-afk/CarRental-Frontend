@@ -237,12 +237,13 @@
       left: 0 !important;
       width: 100% !important;
       max-width: none !important;
-      height: calc(100vh - 75px) !important; /* Full height minus bottom nav clearance */
+      height: calc(100% - 60px) !important; /* Full height minus exactly the bottom navigation bar */
       border-radius: 0 !important;
       transform: none !important;
       margin: 0 !important;
       z-index: 999 !important;
       background-color: black;
+      overscroll-behavior: contain; /* Prevents scroll chaining to the page body */
     }
     
     .mobile-hide {
@@ -263,6 +264,7 @@
     .active-users {
       height: 100%;
       border-radius: 0 !important;
+      overscroll-behavior: contain;
     }
     
     .message-box {
@@ -272,6 +274,7 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      overscroll-behavior: contain;
     }
     
     .userchat-info {
@@ -283,9 +286,10 @@
     .message-content {
       width: 100%;
       flex: 1 1 auto !important;
-      height: 0 !important; /* Forces flexbox to calculate height properly based on flex-grow */
+      height: 0 !important;
       overflow-y: auto;
       margin-bottom: 0px;
+      overscroll-behavior: contain;
     }
 
     .chat-container {
@@ -293,7 +297,7 @@
       background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(10px);
       flex-shrink: 0;
-      margin-bottom: 10px; /* Leave space above the bottom navigation bar */
+      margin-bottom: 0px; /* Aligns flatly at the bottom edge above navigation bar */
     }
   }
 
