@@ -43,7 +43,7 @@ export const ChatProvider = ({ children }) => {
     }
 
     const newConnection = new signalR.HubConnectionBuilder()
-      .withUrl(`https://localhost:7189/chathub?email=${user.email}`)
+      .withUrl(`https://carrental-backend-9bti.onrender.com/chathub?email=${user.email}`)
       .withAutomaticReconnect()
       .build();
 

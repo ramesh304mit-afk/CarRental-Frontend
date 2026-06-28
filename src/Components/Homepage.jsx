@@ -74,7 +74,7 @@ export default function Homepage() {
         params.append("minPrice", filters.priceRange[0]);
         params.append("maxPrice", filters.priceRange[1]);
         const response = await fetch(
-          `https://localhost:7189/api/CarDetails/filterImages?${params.toString()}`
+          `https://carrental-backend-9bti.onrender.com/api/CarDetails/filterImages?${params.toString()}`
         );
         if (!response.ok) {
           const errorText = await response.text();

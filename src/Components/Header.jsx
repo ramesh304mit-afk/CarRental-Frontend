@@ -76,7 +76,7 @@ export default function Header() {
 
       try {
         const response = await fetch(
-          `https://localhost:7189/api/SignupDetails/GetProfileImageData/${user.email}`
+          `https://carrental-backend-9bti.onrender.com/api/SignupDetails/GetProfileImageData/${user.email}`
         );
         if (response.ok) {
           const data = await response.json();
@@ -113,7 +113,7 @@ export default function Header() {
 
     try {
       const response = await fetch(
-        "https://localhost:7189/api/SignupDetails/UpdateProfileImageData", // API endpoint
+        "https://carrental-backend-9bti.onrender.com/api/SignupDetails/UpdateProfileImageData", // API endpoint
         {
           method: "PUT",
           body: formData,
@@ -177,7 +177,7 @@ export default function Header() {
 
     try {
       const response = await fetch(
-        `https://localhost:7189/api/SignupDetails/DeleteProfileImageData/${user.email}`,
+        `https://carrental-backend-9bti.onrender.com/api/SignupDetails/DeleteProfileImageData/${user.email}`,
         {
           method: "DELETE",
         }
@@ -214,7 +214,7 @@ export default function Header() {
 
     try {
       const response = await fetch(
-        `https://localhost:7189/api/SignupDetails/DeleteAccount/${user.email}`,
+        `https://carrental-backend-9bti.onrender.com/api/SignupDetails/DeleteAccount/${user.email}`,
         {
           method: "DELETE",
         }

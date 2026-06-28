@@ -44,7 +44,7 @@ export default function SignupPage() {
       }
 
       const response = await fetch(
-        "https://localhost:7189/api/SignupDetails/UploadSignupDetails",
+        "https://carrental-backend-9bti.onrender.com/api/SignupDetails/UploadSignupDetails",
         {
           method: "POST",
           body: formData, // Send FormData

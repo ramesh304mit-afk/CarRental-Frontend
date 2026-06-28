@@ -120,7 +120,7 @@ export default function CarDetailPopup() {
 
       try {
         const response = await fetch(
-          `https://localhost:7189/api/SignupDetails/GetProfileImageData/${selectedCar.signupEmailID}`
+          `https://carrental-backend-9bti.onrender.com/api/SignupDetails/GetProfileImageData/${selectedCar.signupEmailID}`
         );
         if (response.ok) {
           const data = await response.json();

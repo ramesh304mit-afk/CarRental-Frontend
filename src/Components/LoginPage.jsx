@@ -27,7 +27,7 @@ export default function LoginPage() {
 
     try {
       const response = await fetch(
-        "https://localhost:7189/api/SignupDetails/Login",
+        "https://carrental-backend-9bti.onrender.com/api/SignupDetails/Login",
         {
           method: "POST",
           headers: {

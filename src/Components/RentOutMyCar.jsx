@@ -209,7 +209,7 @@ export default function RentOutMyCar() {
     try {
       // Make the POST request to the backend using fetch
       const response = await fetch(
-        "https://localhost:7189/api/CarDetails/upload",
+        "https://carrental-backend-9bti.onrender.com/api/CarDetails/upload",
         {
           method: "POST",
           body: data,

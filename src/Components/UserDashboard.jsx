@@ -37,7 +37,7 @@ export default function UserDashboard() {
 
       try {
         const response = await fetch(
-          `https://localhost:7189/api/CarDetails/getImagesByEmail?email=${user.email}`,
+          `https://carrental-backend-9bti.onrender.com/api/CarDetails/getImagesByEmail?email=${user.email}`,
           {
             method: "GET",
             headers: {
@@ -85,7 +85,7 @@ export default function UserDashboard() {
 
     try {
       const response = await fetch(
-        "https://localhost:7189/api/CarDetails/UpdateCarImageData",
+        "https://carrental-backend-9bti.onrender.com/api/CarDetails/UpdateCarImageData",
         {
           method: "PUT",
           body: formData,
@@ -134,7 +134,7 @@ export default function UserDashboard() {
 
     try {
       const response = await fetch(
-        `https://localhost:7189/api/CarDetails/delete/${carToDelete.id}`,
+        `https://carrental-backend-9bti.onrender.com/api/CarDetails/delete/${carToDelete.id}`,
         {
           method: "DELETE",
           headers: {

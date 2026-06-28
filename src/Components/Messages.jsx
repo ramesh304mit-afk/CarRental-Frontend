@@ -81,7 +81,7 @@ export default function Messages() {
         const fetchedData = await Promise.all(
           activeUsers.map(async (email) => {
             const response = await fetch(
-              `https://localhost:7189/api/SignupDetails/GetProfileImageData/${email}`
+              `https://carrental-backend-9bti.onrender.com/api/SignupDetails/GetProfileImageData/${email}`
             );
             if (response.ok) {
               const data = await response.json();
